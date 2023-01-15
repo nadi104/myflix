@@ -2,10 +2,10 @@
 
     function mysqlConnect(){
 
-        $db_username = 'root';    
-        $db_password = 'Ashdundee2022@';        
+        $db_username = 'myflixapp';    
+        $db_password = 'webapp01@demo#';        
         $db_name = 'myflix';       
-        $db_host = 'localhost:3306';
+        $db_host = '10.132.0.21:3306';
         
         
         
