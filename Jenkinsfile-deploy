@@ -1,0 +1,11 @@
+node {   
+    stage('Clone repository') {
+        git credentialsId: 'github', branch: 'main', url: 'https://github.com/nadi104/myflix'
+    }
+    
+    stage('Copy Script to webapp-01') {
+      sshagent (credentials: ['webapp-01-ssh']) {
+        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 hostname'
+      }
+    }   
+}
