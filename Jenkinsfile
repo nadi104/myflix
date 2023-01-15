@@ -7,7 +7,7 @@ node {
        dockerImage = docker.build("ashinidundee/demo:latest")
     }
     
- stage('Push image') {
+    stage('Push image') {
         withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
         dockerImage.push()
         }
