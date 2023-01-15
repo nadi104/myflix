@@ -48,7 +48,7 @@
           <div class="p-5">
             <button type="button" class="btn btn-danger" onclick="window.location.href='index.html'">Sing out</button>
           </div> 
-        </div>
+      </div>
         
       </div>
       <div class="row ">
@@ -116,11 +116,7 @@
         <?php
         }
       ?>
-      </div>
-      
-      
-      
-      
+      </div>   
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
