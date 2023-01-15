@@ -28,6 +28,15 @@
         height: 100px;
         width: 100px;
       }
+      .my-vedio-name{
+        color: white;
+        font-weight: bold;
+      }
+      .my-vedio-text{
+        color: antiquewhite;
+        font-size: small;
+        
+      }
     </style>
     
     <div class="my-custom-back">
@@ -65,11 +74,11 @@
       </div>
       <div class="row justify-content-center align-items-start gx-1">
         <div class="col-sm-12">
-            <p class="fs-5 text-white bg-dark">Recommended for you</p>
+            <p class="fs-5 text-white bg-dark">All vedio</p>
         </div>
       </div>
       
-      <div class="row">
+      <div class="row align-items-start">
       <?php
         $mongoViewvideo = mongoViewvideos();
         //  print_r($mongoViewvideo);
@@ -86,10 +95,23 @@
   
       ?>
         <div class="col-sm-4">
+          <div class="row">
+          <div class=" my-vedio-name ">
             <h4><?php echo $mv_name;?></h4>
+            <video controls src="video\<?php echo $id.".mp4";?>" width="500px"></video>
+            <div class="read-more-container">
+            <div class="container my-vedio-text">
+            <p> <?php echo $desctribtion;?></p>
+            <p>Directed by <?php echo $director;?></p>
+            <p><?php echo $year;?></p>
+
         </div>
-        <div class="col-sm-4">
-            <video controls src="video\<?php echo $id.".mp4";?>" width="400px"></video>
+          </div>
+        </div>
+        
+
+      </div>
+
         </div>
         <?php
         }
