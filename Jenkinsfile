@@ -1,6 +1,6 @@
 node {   
     stage('Clone repository') {
-        git credentialsId: 'github', url: 'https://github.com/nadi104/myflix'
+        git credentialsId: 'github', branch: 'main', url: 'https://github.com/nadi104/myflix'
     }
     
     stage('Build image') {
