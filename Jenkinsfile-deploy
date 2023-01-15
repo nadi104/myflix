@@ -3,11 +3,22 @@ node {
         git credentialsId: 'github', branch: 'main', url: 'https://github.com/nadi104/myflix'
     }
     
-    stage('Deploy application to webapp-01') {
+    stage('Pull latest docker in webapp-01') {
       sshagent (credentials: ['webapp-01-ssh']) {
-        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "hostname; sudo docker ps; sudo docker image ls"'
+        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker pull ashinidundee/demo:latest"'
       }
     }
 
+    stage('Stop existing application in webapp-01') {
+      sshagent (credentials: ['webapp-01-ssh']) {
+        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker stop myflix-webapp"'
+      }
+    }
+
+    stage('Start new app in webapp-01') {
+      sshagent (credentials: ['webapp-01-ssh']) {
+        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker run --rm -d --name myflix-webapp -p 8080:80 ashinidundee/demo:latest; sudo docker ps"'
+      }
+    }
 
 }
