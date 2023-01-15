@@ -54,36 +54,30 @@
     
     <script>
     $(document).ready(function () {
+        $(".lgnBtn").click(function (e) {
+          $('.lgnBtn').attr('disabled','disabled');
+          $('.lgnBtn').html('Please Wait...');
 
-
-                    $(".lgnBtn").click(function (e) {
-                      $('.lgnBtn').attr('disabled','disabled');
-                      $('.lgnBtn').html('Please Wait...');
-
-                        // var r = $(this).attr("data-id");
-                        var dataString = $('#myformses_1').serialize();
-                        // $('#loading_air_cell_book2').show();
-                        $('#resonse').hide();
-                      
-                        $.ajax({
-                            type: 'POST',
-                            url: 'verifyloggin.php',
-                            data: dataString,
-                            success: function (data) {
-                              $('.lgnBtn').attr('enabled','enabled');
-                              $('.lgnBtn').html('signin');
-                                
-                                $('#resonse').html(data);
-                                // $('#loading_air_cell_book2').hide();
-                                $('#resonse').show();
-                                // $('#message-review2').show();
-                              
-
-                            }
-                        });
-
-
-                    });
+            // var r = $(this).attr("data-id");
+            var dataString = $('#myformses_1').serialize();
+            // $('#loading_air_cell_book2').show();
+            $('#resonse').hide();
+          
+            $.ajax({
+                type: 'POST',
+                url: 'verifyloggin.php',
+                data: dataString,
+                success: function (data) {
+                  $('.lgnBtn').attr('enabled','enabled');
+                  $('.lgnBtn').html('signin');
+                    
+                    $('#resonse').html(data);
+                    // $('#loading_air_cell_book2').hide();
+                    $('#resonse').show();
+                    // $('#message-review2').show();
+                }
+            });
+        });
     });
     </script>
       
