@@ -11,13 +11,13 @@ node {
 
     stage('Stop existing application in webapp-01') {
       sshagent (credentials: ['webapp-01-ssh']) {
-        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker stop myflix-webapp"'
+        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker stop myflix-webapp; sudo docker rm myflix-webapp"'
       }
     }
 
     stage('Start new app in webapp-01') {
       sshagent (credentials: ['webapp-01-ssh']) {
-        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker run --rm -d --name myflix-webapp -p 8080:80 ashinidundee/demo:latest; sudo docker ps"'
+        sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.132.0.19 "sudo docker run -d --restart=on-failure --name myflix-webapp -p 8080:80 ashinidundee/demo:latest; sudo docker ps"'
       }
     }
 
