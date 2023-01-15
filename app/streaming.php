@@ -46,7 +46,7 @@
         </div>
         <div class="col-sm-2">
           <div class="p-5">
-            <button type="button" class="btn btn-danger" onclick="window.location.href='file:///C:/UOD_september/devops/html/Netflix_mytemplate/index.html'">Sing out</button>
+            <button type="button" class="btn btn-danger" onclick="window.location.href='index.html'">Sing out</button>
           </div> 
         </div>
         
