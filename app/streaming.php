@@ -56,22 +56,6 @@
             <img src="images/top-10/01.jpg" class="img-responsive">
         </div>
       </div>
-      
-      <div class="read-more-container">
-        <div class="container">
-            <p>
-                Kevin Hart and Ice Cube lead the returning lineup of Ride Along 2, the sequel to the blockbuster action-comedy that gave us the year’s 
-                most popular comedy duo. Joining Hart and Cube for the next chapter of the series are director Tim Story,
-                as well as Cube’s fellow producers—Will Packer, Matt Alvarez and Larry Brezner—who will produce alongside Cube.<br>
-                <span class="read-more-text"> 
-                    Rider along<br>asldjhgf<br>SJgd
-                </span>
-            </p>
-            <span class="read-more-btn">Read More</span>
-
-        </div>
-
-      </div>
       <div class="row justify-content-center align-items-start gx-1">
         <div class="col-sm-12">
             <p class="fs-5 text-white bg-dark">All vedio</p>
